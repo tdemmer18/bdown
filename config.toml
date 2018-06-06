@@ -1,39 +1,4 @@
 baseurl = "/"
 languageCode = "en-us"
 title = "A Hugo website"
-theme = "hugo-academic"
-googleAnalytics = ""
-disqusShortname = ""
-ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
-name = "Academic"
-license = "MIT"
-licenselink = "https://github.com/gcushen/hugo-academic/blob/master/LICENSE.md"
-description = "Easily create beautifully simple academic or personal sites"
-homepage = "https://github.com/gcushen/hugo-academic"
-min_version = 0.30
-tags = ["academic",
-        "portfolio",
-        "responsive",
-        "student",
-        "personal",
-        "university",
-        "blog",
-        "minimal"
-        ]
-features = ["academic profile",
-            "research publication system",
-            "projects",
-            "blog",
-            "teaching",
-            "contact"
-            ]
-
-[author]
-  name = "George Cushen"
-  homepage = "https://georgecushen.com"
-
-# If porting an existing theme
-[original]
-  name = ""
-  homepage = ""
-  repo = ""
+theme = "hugo-base16-theme"
