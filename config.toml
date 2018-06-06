@@ -1,4 +1,4 @@
 baseurl = "/"
 languageCode = "en-us"
 title = "A Hugo website"
-theme = "hugo-base16-theme"
+theme = "hugo-academic"
