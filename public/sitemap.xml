@@ -73,6 +73,10 @@
   </url>
   
   <url>
+    <loc>/portfolio/boxscorebufana/</loc>
+  </url>
+  
+  <url>
     <loc>/categories/</loc>
     <priority>0</priority>
   </url>

@@ -110,5 +110,17 @@
       <description>&lt;p&gt;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life. One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.&lt;/p&gt;</description>
     </item>
     
+    <item>
+      <title>ANA @ BUF</title>
+      <link>/portfolio/boxscorebufana/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/portfolio/boxscorebufana/</guid>
+      <description>This post will take a look at the box score in Visualization form. The goal of this post is to quickly view who scored and assisted on goals from the game.
+Buffalo Sabres: 3 (Win)
+Once again, the top line strikes, with both Jack Eichel and Sam Reinhart provding to assists on the night and Jeff Skinner scoring another goal.
+Anaheim Ducks: 0 (Loss)</description>
+    </item>
+    
   </channel>
 </rss>
