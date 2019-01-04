@@ -25,7 +25,7 @@ sabres <- read_csv("~/bdown/data/sabres_ducks.csv", skip = 1) %>%
   separate(Player, c("First", "Last", "id"), extra = "drop") %>% 
   unite("Player", c("First", "Last")) %>%
   select(Player, G, A, PTS) %>% 
-  filter(PTS > 0) %>%
+  #filter(PTS > 0) %>%
   gather("Category", "Stat", "G":"PTS") %>%
   ggplot(aes(Player, Stat)) +
   geom_bar(stat = "identity", fill = "steelblue") +
