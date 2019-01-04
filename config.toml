@@ -1,4 +1,4 @@
-baseurl = "https:www.tdemmer.com"
+baseurl = "https://example.org/"
 title = "TD Analytics"
 theme = "hugo-creative-portfolio-theme"
 languageCode = "en-us"
