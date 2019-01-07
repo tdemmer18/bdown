@@ -6,18 +6,17 @@
     <description>Recent content in Portfolios on TD Analytics</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 05 Nov 2016 18:25:22 +0530</lastBuildDate>
     
 	<atom:link href="/portfolio/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Name of the work 1</title>
-      <link>/portfolio/work1/</link>
-      <pubDate>Sat, 05 Nov 2016 18:25:22 +0530</pubDate>
+      <title></title>
+      <link>/portfolio/vt_building_map.nb/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/portfolio/work1/</guid>
-      <description>&lt;p&gt;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life. One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.&lt;/p&gt;</description>
+      <guid>/portfolio/vt_building_map.nb/</guid>
+      <description>Virginia Tech - Map of Building Ages          code{white-space: pre;} pre:not([class]) { background-color: white; }  if (window.hljs) { hljs.configure({languages: []}); hljs.initHighlightingOnLoad(); if (document.readyState &amp;&amp; document.readyState === &#34;complete&#34;) { window.setTimeout(function() { hljs.initHighlighting(); }, 0); } }  h1 { font-size: 34px; } h1.title { font-size: 38px; } h2 { font-size: 30px; } h3 { font-size: 24px; } h4 { font-size: 18px; } h5 { font-size: 16px; } h6 { font-size: 12px; } .</description>
     </item>
     
     <item>
@@ -30,6 +29,18 @@
 Buffalo Sabres: 3 (Win)
 Once again, the top line strikes, with both Jack Eichel and Sam Reinhart provding to assists on the night and Jeff Skinner scoring another goal.
 Anaheim Ducks: 0 (Loss)</description>
+    </item>
+    
+    <item>
+      <title>Virginia Tech - Map of Building Ages</title>
+      <link>/portfolio/vt_building_map/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/portfolio/vt_building_map/</guid>
+      <description>Load applicable packages library(tidyverse) library(rvest) library(stringr) library(ggplot2) library(ggmap) library(leaflet)  Scrape Website We will be scraping vt.edu/location/buidlings for the names of all the buildings.
+url &amp;lt;- &amp;quot;https://vt.edu/about/locations/buildings.html&amp;quot; webpage &amp;lt;- read_html(url) Using CSS selectors to scrap the buildings from vt website
+building_list_html &amp;lt;- html_nodes(webpage,&amp;#39;.vt-list-title&amp;#39;) building_data &amp;lt;- html_text(building_list_html) View the first five rows of our building_data.
+head(building_data) ## [1] &amp;quot;\n\n Agnew Hall\n\n&amp;quot; ## [2] &amp;quot;\n\n Alphin-Stuart Livestock Teaching Arena\n\n&amp;quot; ## [3] &amp;quot;\n\n Ambler Johnston Hall\n\n&amp;quot; ## [4] &amp;quot;\n\n Architecture Annex\n\n&amp;quot; ## [5] &amp;quot;\n\n Armory\n\n&amp;quot; ## [6] &amp;quot;\n\n Art and Design Learning Center\n\n&amp;quot; Remove the and the white space from the building_data.</description>
     </item>
     
   </channel>

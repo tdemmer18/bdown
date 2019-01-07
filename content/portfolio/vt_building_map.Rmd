@@ -1,0 +1,213 @@
+---
+title: "Virginia Tech - Map of Building Ages"
+author: "Thomas J. Demmer"
+date: "1/6/2019"
+output:
+  pdf_document: default
+  html_notebook: default
+image: img/portfolio/vt-logo.png
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#### Load applicable packages
+```{r message=FALSE}
+library(tidyverse)
+library(rvest)
+library(stringr)
+library(ggplot2)
+library(ggmap)
+library(leaflet)
+```
+
+#### Scrape Website
+We will be scraping vt.edu/location/buidlings for the names of all the buildings.
+```{r}
+
+url <- "https://vt.edu/about/locations/buildings.html"
+webpage <- read_html(url)
+```
+
+Using CSS selectors to scrap the buildings from vt website
+```{r}
+building_list_html <- html_nodes(webpage,'.vt-list-title')
+building_data <- html_text(building_list_html)
+```
+
+View the first five rows of our building_data.
+```{r}
+head(building_data)
+```
+
+
+Remove the \n\n and the white space from the building_data.
+```{r}
+buildings <-gsub("\n\n  ","", building_data)
+buildings <-gsub("\n\n","", building_data)
+b <- trimws(buildings, which = c("both"))
+head(b)
+```
+
+Scrape to get links for buildings
+```{r}
+
+building_list_html <- html_nodes(webpage,'.vt-list-title a') %>%
+  html_attr("href")
+```
+
+View the first five rows of website addresses for all buildings.
+```{r}
+head(building_list_html)
+```
+
+Convert our data to a dataframe and then to tibble.
+```{r warning=FALSE}
+
+vt_df <- data.frame(Building =b, Building_Link=building_list_html)
+vt_df <- as.tibble(vt_df)
+```
+
+View dataframe (tibble)
+```{r}
+head(vt_df)
+```
+
+##### Scrape coordinates and building years
+
+Scrape for all website addresses using the css selector method. Create an empty list for which the for loop will append into and then view the first five rows.
+```{r}
+cord_list <- list()
+
+for (i in vt_df$Building_Link) {
+  url2 <- paste0(i)
+  webpage <- read_html(url2)
+  coordinate_list <- html_nodes(webpage, '.vt-building-data-value:nth-child(8)')
+  coordinate_data <- html_text(coordinate_list)
+  cord_list <- append(cord_list, coordinate_data)
+}
+
+head(cord_list)
+```
+
+```{r}
+
+year_list <- list()
+
+for (y in vt_df$Building_Link) {
+  url3 <- paste0(y)
+  webpage <- read_html(url3)
+  year_list_data <- html_nodes(webpage, '.vt-building-data-value:nth-child(2)')
+  year_data <- html_text(year_list_data)
+  year_list <- append(year_list, year_data)
+}
+head(year_list)
+```
+
+
+Put the cord_list into a dataframe and gather the amounts into a Name and Cord column and then select only the Cordinate column (Cord) which we will add to the dataframe. View the first five rows.
+
+```{r warning=FALSE}
+
+cord_list <- data.frame(cord_list) %>%
+  rownames_to_column() %>%
+  gather("Name", "Cord", -rowname) %>%
+  select("Cord")
+
+head(cord_list)
+```
+
+Check the class of cord_list - Uncomment below to check
+```{r}
+class(cord_list)
+```
+
+Put the year_list into a dataframe and gather the amounts into Name and Year and then select only the Year column which we will add to the dataframe. View the first five rows.
+```{r warning=FALSE}
+
+year_list_to_df <- data.frame(year_list) %>%
+  rownames_to_column() %>%
+  gather("Name", "Year", -rowname) %>%
+  select("Year")
+
+head(year_list_to_df)
+```
+
+
+Add cord_list to our vt_df and then break out lat. and long. into separate columns and select only building, lat. and long.
+```{r}
+vt_df <- bind_cols(vt_df, cord_list) %>%
+  separate(Cord, c("Latitude", "Longitude"), sep = ", ") %>%
+  select(Building, Latitude, Longitude)
+
+head(vt_df)
+```
+
+Add Year_list_to_df to our vt_df
+```{r}
+
+vt_df <- bind_cols(vt_df, year_list_to_df)
+
+head(vt_df)
+```
+
+
+Modify the column class for lat. long. and year. Then use sapply to view the classes of vt_df.  Then view the first five rows.
+```{r warning=FALSE} 
+vt_df$Latitude <- as.numeric(vt_df$Latitude)
+vt_df$Longitude <- as.numeric(vt_df$Longitude)
+vt_df$Year <- as.numeric(as.character(vt_df$Year))
+
+sapply(vt_df, class)
+
+head(vt_df)
+```
+
+
+#### Map of Campus with buildings highlighted by age
+
+Creating labels for when hovering over building. The label shows the building name in bold and year on the next line
+```{r}
+labels <- sprintf(
+  "<strong>%s</strong><br/>%g",
+  vt_df$Building, vt_df$Year
+) %>% lapply(htmltools::HTML)
+```
+
+Creating a color bin for our map circles
+```{r}
+pal <- colorBin("viridis", domain = vt_df$Year)
+```
+
+
+See the following website for different themes http://leaflet-extras.github.io/leaflet-providers/preview/index.html to use in the addProviderTiles().  In our setView() the cordinates are for the Drillfield which used for the center of campus.
+```{r}
+vt_df %>%
+  leaflet() %>%
+  addProviderTiles(providers$CartoDB.Positron) %>% # 
+  setView(-80.42189, 37.22751, zoom = 16) %>% 
+  addCircles(~Longitude, ~Latitude,
+             radius = 20,
+             color = ~pal(vt_df$Year),
+             label = labels,
+             highlight = highlightOptions(
+               weight = 7,
+               color = "#F00",
+               fillOpacity = 0.6,
+               bringToFront = TRUE),
+             labelOptions = labelOptions(
+               style = list("font-weight" = "normal", padding = "3px 8px"),
+               textsize = "15px",
+               direction = "auto")) %>%
+  addLegend("bottomright",
+            colors = "FF0000",
+            labels = "",
+            title = "VT Buildings")
+```
+
+```{r}
+
+```
+

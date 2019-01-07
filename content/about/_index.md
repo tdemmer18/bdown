@@ -11,7 +11,7 @@ So who am I?  Here is a quick glimpse:
 
 The second of four boys to the best parents one could ask for.  Husband to the love of my life, my high-school sweetheart **Amanda**, who continues to inspire and motivate me each and every day.  Father to the most amazing boy **Owen**, who makes me love and laugh more than I ever thought was possible.
 
-Enjoy watching most professional sports.  Fantasy sports enthusiast.  Studied to be an accountant (CPA) and still practicing today...  Found a new passion for learning to code and trying to soak up every piece of information.
+Enjoy watching professional sports.  Fantasy sports enthusiast.  Studied to be an accountant (CPA) and currently working for Virginia Tech as a Senior Auditor. Found a new passion for learning to code and trying to soak up every piece of information.
 
 
 

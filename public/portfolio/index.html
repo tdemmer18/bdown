@@ -113,20 +113,14 @@
               <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 masonry-item">
                   <div class="box-masonry">
                       
-                        
-                        <a href="/portfolio/work1/" title="" class="box-masonry-image with-hover-overlay">
-                        
-                            <img src="/img/portfolio/a4-paper.jpg" alt="" class="img-responsive">
-                        </a>
                       
+                      <div class="box-masonry-text">
                       
-                      <div class="box-masonry-hover-text-header">
-                      
-                          <h4><a href="/portfolio/work1/">Name of the work 1</a></h4>
+                          <h4><a href="/portfolio/vt_building_map.nb/"></a></h4>
                           <div class="box-masonry-description">
                             <p>
                                 
-                                  <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life. One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
+                                  Virginia Tech - Map of Building Ages          code{white-space: pre;} pre:not([class]) { background-color: white; }  if (window.hljs) { hljs.configure({languages: []}); hljs.initHighlightingOnLoad(); if (document.readyState && document.readyState === "complete") { window.setTimeout(function() { hljs.initHighlighting(); }, 0); } }  h1 { font-size: 34px; } h1.title { font-size: 38px; } h2 { font-size: 30px; } h3 { font-size: 24px; } h4 { font-size: 18px; } h5 { font-size: 16px; } h6 { font-size: 12px; } .
                                 
                             </p>
                           </div>
@@ -154,6 +148,33 @@
 Buffalo Sabres: 3 (Win)
 Once again, the top line strikes, with both Jack Eichel and Sam Reinhart provding to assists on the night and Jeff Skinner scoring another goal.
 Anaheim Ducks: 0 (Loss)
+                                
+                            </p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          
+              <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 masonry-item">
+                  <div class="box-masonry">
+                      
+                        
+                        <a href="/portfolio/vt_building_map/" title="" class="box-masonry-image with-hover-overlay with-hover-icon">
+                        
+                            <img src="/img/portfolio/vt-logo.png" alt="" class="img-responsive">
+                        </a>
+                      
+                      
+                      <div class="box-masonry-text">
+                      
+                          <h4><a href="/portfolio/vt_building_map/">Virginia Tech - Map of Building Ages</a></h4>
+                          <div class="box-masonry-description">
+                            <p>
+                                
+                                  Load applicable packages library(tidyverse) library(rvest) library(stringr) library(ggplot2) library(ggmap) library(leaflet)  Scrape Website We will be scraping vt.edu/location/buidlings for the names of all the buildings.
+url &lt;- &quot;https://vt.edu/about/locations/buildings.html&quot; webpage &lt;- read_html(url) Using CSS selectors to scrap the buildings from vt website
+building_list_html &lt;- html_nodes(webpage,&#39;.vt-list-title&#39;) building_data &lt;- html_text(building_list_html) View the first five rows of our building_data.
+head(building_data) ## [1] &quot;\n\n Agnew Hall\n\n&quot; ## [2] &quot;\n\n Alphin-Stuart Livestock Teaching Arena\n\n&quot; ## [3] &quot;\n\n Ambler Johnston Hall\n\n&quot; ## [4] &quot;\n\n Architecture Annex\n\n&quot; ## [5] &quot;\n\n Armory\n\n&quot; ## [6] &quot;\n\n Art and Design Learning Center\n\n&quot; Remove the and the white space from the building_data.
                                 
                             </p>
                           </div>
