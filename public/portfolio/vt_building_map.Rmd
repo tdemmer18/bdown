@@ -1,15 +1,20 @@
 ---
-title: "Virginia Tech - Map of Building Ages"
 author: "Thomas J. Demmer"
 date: "1/6/2019"
-output:
-  html_notebook: default
 image: img/portfolio/vt-logo.png
+showimageonly: true
+title: "Virginia Tech - Map of Building Ages"
+weight: 1
+draft: false
 ---
 
+An analyis of Virginia Tech Buildings by Age.
+<!--more-->
 
-#### Load applicable packages
-```{r message=FALSE}
+
+
+#### Load applicable packagess
+```{r message=FALSE, echo=FALSE}
 library(tidyverse)
 library(rvest)
 library(stringr)
@@ -200,9 +205,5 @@ vt_df %>%
             colors = "FF0000",
             labels = "",
             title = "VT Buildings")
-```
-
-```{r}
-
 ```
 
