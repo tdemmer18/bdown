@@ -8,13 +8,14 @@ weight: 1
 output: html_document
 ---
 
-An analyis of Virginia Tech Buildings by Age, this is a test.
+This is my first post to my blog.  This post is part of a project I am working on at my job at Virginia Tech.  Part of the project involved creating a map of buildings on campus and mapping amounts to show spending over a period of time.  Due to the confidentiality of the spending amounts, I decided to webscrape campus buildings and their ages from this [website](https://vt.edu/about/locations/buildings.html) and map them using the leaflet package in R.
+
+***
 
 
 
-
-#### Load applicable packagess
-```{r message=FALSE, echo=FALSE}
+#### Load the following packages.
+```{r message=FALSE, warning=FALSE}
 library(tidyverse)
 library(rvest)
 library(stringr)
@@ -183,7 +184,7 @@ pal <- colorBin("viridis", domain = vt_df$Year)
 
 
 See the following website for different themes http://leaflet-extras.github.io/leaflet-providers/preview/index.html to use in the addProviderTiles().  In our setView() the cordinates are for the Drillfield which used for the center of campus.
-```{r}
+```{r, fig.align="center", fig.width=6, fig.height=6, fig.cap="Map of Virginia Tech Buildings Colored by Age."}
 vt_df %>%
   leaflet() %>%
   addProviderTiles(providers$CartoDB.Positron) %>% # 

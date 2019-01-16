@@ -16,11 +16,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/portfolio/vt_building_map/</guid>
-      <description>An analyis of Virginia Tech Buildings by Age, this is a test.
-Load applicable packagess  Scrape Website We will be scraping vt.edu/location/buidlings for the names of all the buildings.
-url &amp;lt;- &amp;quot;https://vt.edu/about/locations/buildings.html&amp;quot; webpage &amp;lt;- read_html(url) Using CSS selectors to scrap the buildings from vt website
-building_list_html &amp;lt;- html_nodes(webpage,&amp;#39;.vt-list-title&amp;#39;) building_data &amp;lt;- html_text(building_list_html) View the first five rows of our building_data.
-head(building_data) ## [1] &amp;quot;\n\n Agnew Hall\n\n&amp;quot; ## [2] &amp;quot;\n\n Alphin-Stuart Livestock Teaching Arena\n\n&amp;quot; ## [3] &amp;quot;\n\n Ambler Johnston Hall\n\n&amp;quot; ## [4] &amp;quot;\n\n Architecture Annex\n\n&amp;quot; ## [5] &amp;quot;\n\n Armory\n\n&amp;quot; ## [6] &amp;quot;\n\n Art and Design Learning Center\n\n&amp;quot; Remove the and the white space from the building_data.</description>
+      <description>This is my first post to my blog. This post is part of a project I am working on at my job at Virginia Tech. Part of the project involved creating a map of buildings on campus and mapping amounts to show spending over a period of time. Due to the confidentiality of the spending amounts, I decided to webscrape campus buildings and their ages from this website and map them using the leaflet package in R.</description>
     </item>
     
   </channel>

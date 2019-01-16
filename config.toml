@@ -15,8 +15,8 @@ googleAnalytics = ""
   copyright = "&copy;2019 Thomas J. Demmer"
   sidebarAbout = [
     "Learning to code and loving every minute of it!",
-    "HTML | CSS | R | PYTHON | SQL ",
-    "Originally from Western New York, currently based in Blacksburg, VA."
+    "R | HTML | CSS | PYTHON | SQL ",
+    "Originally from Western New York, now in Blacksburg, VA."
   ]
   # Contact page
      # Since this template is static, the contact form uses www.formspree.io as a
