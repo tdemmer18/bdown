@@ -25,14 +25,14 @@ library(leaflet)
 ```
 
 #### Scrape Website
-We will be scraping vt.edu/location/buidlings for the names of all the buildings.
+To start, I used the rvest package to web scrape the vt.edu/location/buidlings website for the names of all the buildings.  
 ```{r}
-
 url <- "https://vt.edu/about/locations/buildings.html"
 webpage <- read_html(url)
 ```
 
 Using CSS selectors to scrap the buildings from vt website
+
 ```{r}
 building_list_html <- html_nodes(webpage,'.vt-list-title')
 building_data <- html_text(building_list_html)

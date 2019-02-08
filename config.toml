@@ -1,5 +1,5 @@
 baseurl = "https://example.org/"
-title = "TD Analytics"
+title = "TheBoxScoreR"
 theme = "hugo-creative-portfolio-theme"
 languageCode = "en-us"
 # Enable comments by entering your Disqus shortname
@@ -11,12 +11,11 @@ googleAnalytics = ""
   # Style options: default (pink), blue, green, pink, red, sea, violet
   # Use custom.css for your custom styling
   style = "blue"
-  description = "Sports analytics blog"
+  description = "Box Score Analysis blog"
   copyright = "&copy;2019 Thomas J. Demmer"
   sidebarAbout = [
-    "Learning to code and loving every minute of it!",
-    "R | HTML | CSS | PYTHON | SQL ",
-    "Originally from Western New York, now in Blacksburg, VA."
+    "CPA learning to code with R",
+    "R | SQL | HTML | CSS",
   ]
   # Contact page
      # Since this template is static, the contact form uses www.formspree.io as a
@@ -35,7 +34,7 @@ googleAnalytics = ""
   # Nav links in the side bar
   [[params.navlinks]]
   name = "HOME"
-  url = "portfolio/"
+  url = "home/"
   home = true
 
   [[params.navlinks]]
