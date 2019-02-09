@@ -1,0 +1,74 @@
+---
+title: ""
+author: "Thomas J. Demmer"
+date: "2/8/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## About Me
+***
+
+This website was created using [Blogdown](https://bookdown.org/yihui/blogdown/).  The posts will center around coding and learning to program with the R language.  As such, mosts of my posts will include code chuncks to show off some of the coding I have done to produce the charts/visualizations.  All the code for this website is hosted on my [Github](https://github.com/tdemmer18) account.  If you have any questions, please feel free to reach out to me. I am always happy to help!
+
+### WNY
+I grew up in Western New York and can truely say I love it there and miss it there.  Life has taken me elsewhere, but I always enjoy returning home.
+
+```{r}
+library(leaflet)
+m <- leaflet() %>%
+  addProviderTiles(providers$CartoDB.Positron) %>%
+  setView(lng=-78.1875, lat=42.9981, zoom = 7) %>% 
+  addMarkers(lng=-78.1875, lat=42.9981, popup="Batavia, NY")
+m
+```
+
+
+### Family
+The second child of four boys to Jim and MaryBeth Demmer, the best parents I could have asked for.  Growing up with three brothers was awesome.  We didn't always get along as kids, but having these guys to turn to means so much to me.
+
+```{r echo=FALSE, message=FALSE}
+library(tidyverse)
+family <- tibble("Brother" = c("Jim", "Tom (ME)", "Pete", "Ben"), 
+                 "Age" = c(33, 31, 29, 26))
+```
+
+```{r message=FALSE}
+family %>%
+  ggplot(aes(reorder(Brother, Age), Age, fill = Brother)) +
+  geom_bar(stat = "identity") +
+  coord_flip() +
+  labs(x = "Brother") +
+  theme(legend.position = "none") +
+  gghighlight::gghighlight(Brother == "Tom (ME)")
+```
+
+### Amanda
+I met my wife in highschool.  We started dating senior year of highschool.  We became best friends very quickly, and here we are many years later with our six month old baby, Owen!
+```{r echo = FALSE, message=FALSE}
+amanda <- tibble("Event" = c("Started Dating", "Married", "Had a baby", "Today"),
+                 "Date" = c(2005, 2012, 2018, 2019),
+                 "Age" = c(17, 24, 30, 31))
+require("ggrepel")
+
+```
+
+
+```{r}
+amanda %>% 
+  ggplot(aes(Date, Age)) +
+  geom_point() +
+  geom_label_repel(aes(label = Event)) +
+  scale_y_continuous(breaks = seq(10, 35, 5))
+  
+```
+
+
+
+
+
+
+

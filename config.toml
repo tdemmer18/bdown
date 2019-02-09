@@ -1,57 +1,181 @@
-baseurl = "https://example.org/"
-title = "TheBoxScoreR"
-theme = "hugo-creative-portfolio-theme"
-languageCode = "en-us"
-# Enable comments by entering your Disqus shortname
-disqusShortname = ""
-# Enable Google Analytics by entering your tracking code
-googleAnalytics = ""
+# hostname (and path) to the root eg. https://appernetic.github.io/
+baseurl = "https://tdemmer.com/"
+
+# Remark if you want to disable multilingual support.
+DefaultContentLanguage = "en"
+
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
+
+# If you want all of the languages to be put below their respective language code,
+# enable DefaultContentLanguageInSubdir = true. Without enabling it english content
+# will be in the root and other languages in their respective subfolder such as /sv/.
+# See [Languages] settings at the end of this file.
+
+# Use this languageCode if it's not a multilingual site and also remove all language blocks and menus in the language sections to disable multilingual support.
+# language blocks.
+# Language
+#languageCode = "en"
+
+# SES friendly url:s
+canonifyurls = true
+
+# Frontmatter format
+# "yaml", "toml", "json"
+metaDataFormat = "toml"
+
+# Theme to use (located in /themes/THEMENAME/)
+theme = "hugo-bootstrap-premium"
+# Pagination
+paginate = 20
+paginatePath = "page"
+
+# Enable Disqus integration
+disqusShortname = "tdemmer"
+
+
+[permalinks]
+post = "/:slug/"
+code = "/:filename/"
+
+[taxonomies]
+tag = "tags"
+topic = "topics"
+
+[author]
+name = "Thomas J. Demmer"
+email = "tdemmer18@gmail.com"
+
+[twitter]
+card = "summary_large_image"
+site = "@tdemmer18"
+creator = "@tdemmer18"
+
+#
+# All parameters below here are optional and can be mixed and matched.
+#
+
+[params.popover]
+# This is a highly configurable popover form.
+enablepopover = false #enable or disable popover: true/false.
+posturl = "https://zapier.com/hooks/catch/1227563/" # Your zapier post hook.
+headerimage = "//placehold.it/1000x600"
+expirecookie = 5 #show it again after number of days to visitors that has not subscribed.
+cookiename = "mycookie1" #give the cookie a unique name variable (avoid spaces and strange characters).
+signupheader = "Join Our Newsletter"
+showmodaltimeout = 10000 #show popover modal after time interval in milliseconds.
+mouseleave = true #show popover when mouse leaves window: true/false.
+modalsize = "" #lg or sm. Empty is md. If phone is detected lg is used.
+imagedescription = "Placeholder image for this popover modal optin form"
+signuptext = "Signup today for free and be the first to get notified on new updates."
+inputplaceholder = "Enter your email"
+submitbutton = "Subscribe"
+successmessage = "Thanks for your subscription!"
+errormessage = "Submitting form failed!"
+optin = true #opt-in: true/false
 
 [params]
-  # Style options: default (pink), blue, green, pink, red, sea, violet
-  # Use custom.css for your custom styling
-  style = "blue"
-  description = "Box Score Analysis blog"
-  copyright = "&copy;2019 Thomas J. Demmer"
-  sidebarAbout = [
-    "CPA learning to code with R",
-    "R | SQL | HTML | CSS",
-  ]
-  # Contact page
-     # Since this template is static, the contact form uses www.formspree.io as a
-     # proxy. The form makes a POST request to their servers to send the actual
-     # email. Visitors can send up to a 1000 emails each month for free.
-     #
-     # What you need to do for the setup?
-     #
-     # - set your email address under 'email' below
-     # - upload the generated site to your server
-     # - send a dummy email yourself to confirm your account
-     # - click the confirm link in the email from www.formspree.io
-     # - you're done. Happy mailing!
-  email = "tdemmer18@gail.com"
+# bootswatch theme name, unmark and select one: cerulean, cosmo, cyborg, darkly,
+# default, flatly, journal,  lumen, paper, readable, sandstone, simplex,
+# slate, spacelab, superhero, united, yeti.
 
-  # Nav links in the side bar
-  [[params.navlinks]]
-  name = "HOME"
-  url = "home/"
-  home = true
+bootswatchtheme = "flatly"
 
-  [[params.navlinks]]
-  name = "ABOUT"
-  url = "about/"
+# menu for changing language. This changes languages with js and stores the choice with the help of JavaScript in a Cookie. Then the path is rewritten with pathnamereplace.js. The name of the md files needs to have the same name for each language abbreviation to work correctly. Example: showcase.en.md and showcase.sv.md. It only works if DefaultContentLanguageInSubdir = true
+switchlang = false
+# You can use markdown here.
+BrandImage = "" #top header brand image.
+brand = "Thomas J. Demmer" # brand image alt text.
+topline = "few words about your site"
+footline = ""
 
-  [[params.navlinks]]
-  name = "CONTACT"
-  url = "contact/"
+customJS = []
+customCSS = ["/css/style_custom.css"]
 
-  [params.social]
-  # facebook      = "full page or profile url in facebook"
-  # googleplus    = "full profile url in googleplus"
-  # email         = "email@example.com"
-  twitter       = "https://twitter.com/tdemmer18"
-  linkedin      = "https://www.linkedin.com/in/tdemmer"
-  # stackoverflow = "full profile url in stackoverflow"
-  instagram     = "https://www.instagram.com/tdemmer18"
-  github        = "https://github.com/tdemmer18"
-  # youtube       = "full profile url in youtube"
+# Text for the top menu link, which goes to the root URL for the site.
+# Default (if omitted) is "Home".
+home = "home"
+
+mailmunchid = "" # Mailmunch site id
+sumomeid = "" # Sumome id
+mathjax = "2.7.1" # cdnjs hosted version; empty string to disable mathjax
+
+# Show a sidebar menu
+showRightSidebar = true
+# Select a syntax highlight.
+# Check the static/css/highlight directory for options.
+highlight = "default"
+
+# Google Analytics.
+googleAnalytics = ""
+
+# Sidebar social links.
+github = "@tdemmer18" # Your Github profile ID
+bitbucket = "" # Your Bitbucket profile ID
+linkedin = "" # Your LinkedIn profile ID (from public URL)
+googleplus = "Myprofile" # Your Google+ profile ID
+facebook = "@tdemmer18" # Your Facebook profile ID
+twitter = "@tdemmer18" # Your Twitter profile ID
+youtube = ""  # Your Youtube channel ID
+flattr = ""  # populate with your flattr uid
+
+[blackfriday]
+angledQuotes = true
+fractions = false
+hrefTargetBlank = false
+latexDashes = true
+plainIdAnchors = true
+extensions = []
+extensionmask = []
+
+# Menus
+# If you want active menu items highlighted for internal pages don't add them here, they need to be added in each files front matter.
+# like this:
+#[menu]
+#     [menu.main]
+#        name = "Showcase"
+#        weight = 3
+#        identifier = "showcase"
+# i18n menus. A menu will be added for each language to the right in the top menu. This menu will switch to the selected language. Remember to add the corresponding language in pathnamereplace.js.
+#[[Languages.sv.menu.switchlang]]
+#  name = "English"
+#  identifier = ""
+#  weight = 4
+#  url = "en"
+
+
+[Languages]
+[Languages.en]
+languageCode = "en"
+weight = 1
+copyright = "(c) 2019 Copyright Thomas J. Demmer"
+title = "TDemmer" # Site title
+
+[[Languages.en.menu.main]]
+name = "Home"
+pre = ""
+weight = 2
+identifier = "home"
+url = ""
+
+[[Languages.en.menu.main]]
+name = "About"
+weight = 1
+identifier = ""
+url = "/about/"
+pre = ""
+
+
+[[Languages.en.menu.footer]] # add  links to the bottom right corner.
+name = "Hosted on Github"
+identifier = "github"
+weight = 1
+url = "https://github.com/tdemmer18"
+
+
+
+
+
+
+
+
+

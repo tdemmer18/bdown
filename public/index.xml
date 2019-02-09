@@ -1,34 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>TheBoxScoreR</title>
+    <title>TDemmer</title>
     <link>/</link>
-    <description>Recent content on TheBoxScoreR</description>
+    <description>Recent content on TDemmer</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Thu, 23 Jul 2015 21:13:14 -0500</lastBuildDate>
+    <language>en</language>
+    <managingEditor>tdemmer18@gmail.com (Thomas J. Demmer)</managingEditor>
+    <webMaster>tdemmer18@gmail.com (Thomas J. Demmer)</webMaster>
+    <copyright>(c) 2019 Copyright Thomas J. Demmer</copyright>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Virginia Tech - Map of Building Ages</title>
-      <link>/home/vt_building_map/</link>
+      <title></title>
+      <link>/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/home/vt_building_map/</guid>
-      <description>This is my first post to my blog. This post is part of a project I am working on at my job at Virginia Tech. Part of the project involved creating a map of buildings on campus and mapping amounts to show spending over a period of time. Due to the confidentiality of the spending amounts, I decided to webscrape campus buildings and their ages from this website and map them using the leaflet package in R.</description>
-    </item>
-    
-    <item>
-      <title>Hello R Markdown</title>
-      <link>/post/2015-07-23-r-rmarkdown/</link>
-      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
-      
-      <guid>/post/2015-07-23-r-rmarkdown/</guid>
-      <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
-You can embed an R code chunk like this:
-summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
+      <author>tdemmer18@gmail.com (Thomas J. Demmer)</author>
+      <guid>/about/</guid>
+      <description>About Me This website was created using Blogdown. The posts will center around coding and learning to program with the R language. As such, mosts of my posts will include code chuncks to show off some of the coding I have done to produce the charts/visualizations. All the code for this website is hosted on my Github account. If you have any questions, please feel free to reach out to me.</description>
     </item>
     
   </channel>
