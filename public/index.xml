@@ -22,5 +22,14 @@
       <description>About Me This website was created using Blogdown. The posts will center around coding and learning to program with the R language. As such, most of my posts will include code chuncks to show off some of the coding I have done to produce the charts/visualizations. All the code for this website is hosted on my Github account. If you have any questions, please feel free to reach out to me.</description>
     </item>
     
+    <item>
+      <title></title>
+      <link>/resources/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>tdemmer18@gmail.com (Thomas J. Demmer)</author>
+      <guid>/resources/</guid>
+      <description> Resources Books  R for Data Science Blogdown The tidyverse style guide   Blogdown  Syntax Highlighting    </description>
+    </item>
+    
   </channel>
 </rss>

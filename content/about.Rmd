@@ -46,7 +46,7 @@ family %>%
   gghighlight::gghighlight(Brother == "Tom (ME)")
 ```
 
-### Amanda
+### Amanda & Owen
 I met my wife in highschool.  We started dating senior year of highschool.  We became best friends very quickly, and here we are many years later with our six month old baby, Owen!
 ```{r echo = FALSE, message=FALSE}
 amanda <- tibble("Event" = c("Started dating", "Married", "Had a baby", "Today"),

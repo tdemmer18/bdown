@@ -1,0 +1,23 @@
+---
+title: ""
+author: "Thomas J. Demmer"
+date: "2/9/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Resources
+***
+
+### Books
+- [R for Data Science](https://r4ds.had.co.nz/)
+- [Blogdown](https://bookdown.org/yihui/blogdown/)
+- [The tidyverse style guide](https://style.tidyverse.org/)
+
+### Blogdown
+- [Syntax Highlighting](https://amber.rbind.io/blog/2017/11/15/syntax-highlighting/)
+
+
