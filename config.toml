@@ -77,8 +77,13 @@ optin = true #opt-in: true/false
 # bootswatch theme name, unmark and select one: cerulean, cosmo, cyborg, darkly,
 # default, flatly, journal,  lumen, paper, readable, sandstone, simplex,
 # slate, spacelab, superhero, united, yeti.
-
 bootswatchtheme = "flatly"
+
+# options for highlight.js (version, additional languages, and theme)
+    highlightjsVersion = "9.11.0"
+    highlightjsCDN = "//cdn.bootcss.com"
+    highlightjsLang = ["r", "yaml"]
+    highlightjsTheme = "tomorrow-night-bright"
 
 # menu for changing language. This changes languages with js and stores the choice with the help of JavaScript in a Cookie. Then the path is rewritten with pathnamereplace.js. The name of the md files needs to have the same name for each language abbreviation to work correctly. Example: showcase.en.md and showcase.sv.md. It only works if DefaultContentLanguageInSubdir = true
 switchlang = false

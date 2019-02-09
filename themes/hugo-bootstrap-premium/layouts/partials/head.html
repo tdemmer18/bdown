@@ -11,3 +11,10 @@
 </head>
 <body{{ with .Site.Params.theme }} class="{{ . }}"{{ end }} data-ng-app="myapp" data-ng-controller="MyController" data-ng-mouseleave="MouseLeave($event)">
     {{ partial "base/header.html" . }}
+
+
+
+
+<link rel="stylesheet" href="{{"css/obsidian.css" | absURL}}" rel="stylesheet" id="theme-stylesheet">
+<script src="{{ "js/highlight.pack.js" | absURL }}"></script>
+<script>hljs.initHighlightingOnLoad();</script>
