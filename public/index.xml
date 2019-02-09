@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>TDemmer</title>
+    <title>tdemmer</title>
     <link>/</link>
-    <description>Recent content on TDemmer</description>
+    <description>Recent content on tdemmer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <managingEditor>tdemmer18@gmail.com (Thomas J. Demmer)</managingEditor>
@@ -19,7 +19,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <author>tdemmer18@gmail.com (Thomas J. Demmer)</author>
       <guid>/about/</guid>
-      <description>About Me This website was created using Blogdown. The posts will center around coding and learning to program with the R language. As such, mosts of my posts will include code chuncks to show off some of the coding I have done to produce the charts/visualizations. All the code for this website is hosted on my Github account. If you have any questions, please feel free to reach out to me.</description>
+      <description>About Me This website was created using Blogdown. The posts will center around coding and learning to program with the R language. As such, most of my posts will include code chuncks to show off some of the coding I have done to produce the charts/visualizations. All the code for this website is hosted on my Github account. If you have any questions, please feel free to reach out to me.</description>
     </item>
     
   </channel>
