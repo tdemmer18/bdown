@@ -150,12 +150,6 @@ weight = 1
 copyright = "(c) 2019 Copyright Thomas J. Demmer"
 title = "tdemmer" # Site title
 
-[[Languages.en.menu.main]]
-name = "Home"
-pre = ""
-weight = 2
-identifier = "home"
-url = ""
 
 [[Languages.en.menu.main]]
 name = "About"
@@ -166,7 +160,7 @@ pre = ""
 
 [[Languages.en.menu.main]]
 name = "Resources"
-weight = 3
+weight = 2
 identifier = ""
 url = "/resources/"
 pre = ""
