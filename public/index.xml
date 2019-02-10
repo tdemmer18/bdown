@@ -9,9 +9,19 @@
     <managingEditor>tdemmer18@gmail.com (Thomas J. Demmer)</managingEditor>
     <webMaster>tdemmer18@gmail.com (Thomas J. Demmer)</webMaster>
     <copyright>(c) 2019 Copyright Thomas J. Demmer</copyright>
+    <lastBuildDate>Sat, 09 Feb 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>NFL QB 50 CLUB</title>
+      <link>/nfl-qb-50-club/</link>
+      <pubDate>Sat, 09 Feb 2019 00:00:00 +0000</pubDate>
+      <author>tdemmer18@gmail.com (Thomas J. Demmer)</author>
+      <guid>/nfl-qb-50-club/</guid>
+      <description>The National Football League (NFL) just completed it’s 53 season and only three Quarterbacks have thrown for more than 50 touchdown passes during the course of one season. Both Peyton Manning and Tom Brady are considered to be two of the greatest QB’s of all time, the third, Patrict Mahomes was in just his second season, his first as a starter for the Kansas City Chiefs. Follow along below as I use the programming lanugage R to graph and annimate the touchdowns thrown as they accumulate over the season.</description>
+    </item>
     
     <item>
       <title></title>
@@ -28,7 +38,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <author>tdemmer18@gmail.com (Thomas J. Demmer)</author>
       <guid>/resources/</guid>
-      <description> Resources Books  R for Data Science Blogdown The tidyverse style guide   Blogdown  Syntax Highlighting    </description>
+      <description> Resources Books  R for Data Science Blogdown The tidyverse style guide Text Mining with R Data Visualization   Other  RStudio Cheat Sheets Syntax Highlighting in Blogdown    </description>
     </item>
     
   </channel>

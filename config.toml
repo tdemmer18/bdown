@@ -155,20 +155,19 @@ weight = 1
 copyright = "(c) 2019 Copyright Thomas J. Demmer"
 title = "tdemmer" # Site title
 
-
 [[Languages.en.menu.main]]
 name = "About"
 weight = 1
 identifier = ""
 url = "/about/"
-pre = ""
+pre = "<i class='fa fa-user'></i>&nbsp"
 
 [[Languages.en.menu.main]]
 name = "Resources"
 weight = 2
 identifier = ""
 url = "/resources/"
-pre = ""
+pre = "<i class='fa fa-user'></i>&nbsp"
 
 [[Languages.en.menu.footer]] # add  links to the bottom right corner.
 name = "Hosted on Github"

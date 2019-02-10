@@ -1,58 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on TDemmer</title>
+    <title>Posts on tdemmer</title>
     <link>/post/</link>
-    <description>Recent content in Posts on TDemmer</description>
+    <description>Recent content in Posts on tdemmer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <managingEditor>tdemmer18@gmail.com (Thomas J. Demmer)</managingEditor>
     <webMaster>tdemmer18@gmail.com (Thomas J. Demmer)</webMaster>
     <copyright>(c) 2019 Copyright Thomas J. Demmer</copyright>
-    <lastBuildDate>Mon, 05 Dec 2016 12:29:19 +0100</lastBuildDate>
+    <lastBuildDate>Sat, 09 Feb 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Introduktion</title>
-      <link>/introduktion/</link>
-      <pubDate>Mon, 05 Dec 2016 12:29:19 +0100</pubDate>
+      <title>NFL QB 50 CLUB</title>
+      <link>/nfl-qb-50-club/</link>
+      <pubDate>Sat, 09 Feb 2019 00:00:00 +0000</pubDate>
       <author>tdemmer18@gmail.com (Thomas J. Demmer)</author>
-      <guid>/introduktion/</guid>
-      <description>En rubrik Text om ämnet ett.</description>
-    </item>
-    
-    <item>
-      <title>What is Hugo?</title>
-      <link>/what-is-hugo/</link>
-      <pubDate>Sun, 24 Apr 2016 02:50:28 +0200</pubDate>
-      <author>tdemmer18@gmail.com (Thomas J. Demmer)</author>
-      <guid>/what-is-hugo/</guid>
-      <description>Hugo is a general-purpose website framework. Technically speaking, Hugo is a static site generator. Unlike other systems which dynamically build a page every time a visitor requests one, Hugo does the building when you create your content. Since websites are viewed far more often than they are edited, Hugo is optimized for website viewing while providing a great writing experience.
-Sites built with Hugo are extremely fast and very secure.</description>
-    </item>
-    
-    <item>
-      <title>Introduction</title>
-      <link>/introduction/</link>
-      <pubDate>Thu, 21 Apr 2016 02:50:28 +0200</pubDate>
-      <author>tdemmer18@gmail.com (Thomas J. Demmer)</author>
-      <guid>/introduction/</guid>
-      <description>Hugo is written in Go with support for multiple platforms.
-The latest release can be found at Hugo Releases. We currently provide pre-built binaries for &amp;nbsp;Windows, &amp;nbsp;Linux, &amp;nbsp;FreeBSD and &amp;nbsp;OS&amp;nbsp;X (Darwin) for x64, i386 and ARM architectures.
-Hugo may also be compiled from source wherever the Go compiler tool chain can run, e.g. for other operating systems including DragonFly BSD, OpenBSD, Plan&amp;nbsp;9 and Solaris. See http://golang.org/doc/install/source for the full set of supported combinations of target operating systems and compilation architectures.</description>
-    </item>
-    
-    <item>
-      <title>Hello R Markdown</title>
-      <link>/hello-r-markdown/</link>
-      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
-      <author>tdemmer18@gmail.com (Thomas J. Demmer)</author>
-      <guid>/hello-r-markdown/</guid>
-      <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
-You can embed an R code chunk like this:
-summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
+      <guid>/nfl-qb-50-club/</guid>
+      <description>The National Football League (NFL) just completed it’s 53 season and only three Quarterbacks have thrown for more than 50 touchdown passes during the course of one season. Both Peyton Manning and Tom Brady are considered to be two of the greatest QB’s of all time, the third, Patrict Mahomes was in just his second season, his first as a starter for the Kansas City Chiefs. Follow along below as I use the programming lanugage R to graph and annimate the touchdowns thrown as they accumulate over the season.</description>
     </item>
     
   </channel>

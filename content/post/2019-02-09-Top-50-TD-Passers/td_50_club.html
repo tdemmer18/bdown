@@ -1,0 +1,76 @@
+---
+title: "NFL QB 50 CLUB"
+date: "2019-02-09"
+output: html_notebook
+image: top_50_club_annimation.gif
+---
+
+
+
+<p>The National Football League (NFL) just completed it’s 53 season and only three Quarterbacks have thrown for more than 50 touchdown passes during the course of one season. Both Peyton Manning and Tom Brady are considered to be two of the greatest QB’s of all time, the third, Patrict Mahomes was in just his second season, his first as a starter for the Kansas City Chiefs. Follow along below as I use the programming lanugage R to graph and annimate the touchdowns thrown as they accumulate over the season. Let’s see how they compare!</p>
+<hr />
+<p>The following packages have been loaded to assist with the analysis.</p>
+<pre class="r"><code>library(tidyverse)
+library(readr)
+library(lubridate)
+library(gganimate)
+library(extrafont)</code></pre>
+<p>Using the <code>readr</code> package, we import the data containing the game by game touchdowns for the three quarterbacks seasons in which they threw 50 or more touchdowns. This infromation was obtained <a href="https://www.pro-football-reference.com/">ProFootballReference</a> and manually accumulated in a single spreadsheet.</p>
+<pre class="r"><code>td_club &lt;- read_csv(&quot;~/bdown/content/post/2019-02-09-Top-50-TD-Passers/td_50_club.csv&quot;)</code></pre>
+<p>The code below changes the class of each column, “Date”, “Game” and “TD”. This will assist us later when we graph the results.</p>
+<pre class="r"><code>td_club$Date &lt;- mdy(td_club$Date)
+td_club$Game &lt;- as.integer(td_club$Game)
+td_club$TD &lt;- as.integer(td_club$TD)</code></pre>
+<p>Next, we will group the data by player and add a running total column to show the cummulative sum of touchdowns thrown as each season progressed. Let’s take a look at the top five rows of the data to make sure everything looks like we want it to.</p>
+<pre class="r"><code>tds &lt;- td_club %&gt;% 
+  group_by(Player) %&gt;% 
+  mutate(Total_TD = cumsum(TD)) %&gt;% 
+  ungroup()
+head(tds, 5)</code></pre>
+<pre><code>## # A tibble: 5 x 7
+##   Player          Year Date        Game Team     TD Total_TD
+##   &lt;chr&gt;          &lt;dbl&gt; &lt;date&gt;     &lt;int&gt; &lt;chr&gt; &lt;int&gt;    &lt;int&gt;
+## 1 Peyton Manning  2013 2013-09-05     1 DEN       7        7
+## 2 Peyton Manning  2013 2013-09-15     2 DEN       2        9
+## 3 Peyton Manning  2013 2013-09-23     3 DEN       3       12
+## 4 Peyton Manning  2013 2013-09-29     4 DEN       4       16
+## 5 Peyton Manning  2013 2013-10-06     5 DEN       4       20</code></pre>
+<p>Here we are assigning color’s to each player. The colors assigned here related to the team they played on during the season.</p>
+<pre class="r"><code>player_color &lt;- c(&quot;Peyton Manning&quot; = &quot;#FB4F14&quot;, &quot;Tom Brady&quot; = &quot;#002244&quot;, &quot;Patrick Mahomes&quot; = &quot;#E31837&quot;)</code></pre>
+<p>Finally we will use <code>ggplot2</code> to graph the results to show each quarterback compared to each other. I used a bar chart that will build each week and show thet total touchdowns thown. Using the <code>gganimate</code> package, I annimated the graph to show the week by week accumulation.</p>
+<pre class="r"><code>p &lt;- tds %&gt;% 
+  ggplot(aes(reorder(factor(Player), Total_TD), Total_TD, fill = Player)) +
+  geom_col(position = &quot;dodge&quot;) +
+  geom_text(aes(label = Total_TD), nudge_y = -3, color = &quot;white&quot;, size = 8) +
+  scale_fill_manual(values = player_color) +
+  scale_y_continuous(breaks = seq(0, 55, 5)) +
+  labs(title = &quot;NFL QBs with 50+ TD Passes in a Single Season&quot;, 
+       subtitle = &quot;Game #: {closest_state}&quot;,
+       x = &quot;&quot;, y = &quot;&quot;,
+       #title = &quot;QB with over 50 TD in a season&quot;,
+       caption = &quot;@tdemmer18 | 2019-01-28&quot;) +
+  theme(legend.position = &quot;none&quot;,
+        rect = element_rect(fill = &quot;grey95&quot;),
+        panel.grid = element_blank(),
+        panel.background = element_rect(fill = &quot;transparent&quot;, colour = &quot;transparent&quot;),
+        axis.text = element_text(size = 14),
+        axis.ticks = element_blank(),
+        axis.text.y = element_blank(),
+        axis.text.x = element_text(face = &quot;bold&quot;, size = 14),
+        axis.line = element_blank(),
+        plot.title = element_text(hjust = 0.5, size = 18),
+        plot.subtitle = element_text(hjust = 0.5, size = 16),
+        plot.caption = element_text(size = 12),
+        strip.text = element_text(size = 16, face = &quot;bold&quot;),
+        strip.background = element_rect(colour = &quot;black&quot;, fill = &quot;white&quot;)) +
+  facet_wrap(~ Year, scales = &quot;free_x&quot;) +
+  transition_states(Game) +
+  enter_grow()
+
+animate(p, nframes = 32, fps = 1.5, renderer = gifski_renderer(loop = FALSE))</code></pre>
+<p><img src="/post/2019-02-09-Top-50-TD-Passers/td_50_club_files/figure-html/unnamed-chunk-6-1.gif" /><!-- --></p>
+<div id="conclusion" class="section level4">
+<h4>Conclusion</h4>
+<p>In the end, Peyton Manning is still king! He started out hot throwing 7 touchdowns in his first game and then finished off his record setting season to end with 55 touchdowns thrown. Both Brady and Mahomes finished the season with 50 touchdowns, a defeat very impressive in itself, just not enough to match the great Peyton Manning!</p>
+<hr />
+</div>

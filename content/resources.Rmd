@@ -16,8 +16,10 @@ knitr::opts_chunk$set(echo = TRUE)
 - [R for Data Science](https://r4ds.had.co.nz/)
 - [Blogdown](https://bookdown.org/yihui/blogdown/)
 - [The tidyverse style guide](https://style.tidyverse.org/)
+- [Text Mining with R](https://www.tidytextmining.com/)
+- [Data Visualization](https://socviz.co/)
 
-### Blogdown
-- [Syntax Highlighting](https://amber.rbind.io/blog/2017/11/15/syntax-highlighting/)
 
-
+### Other
+- [RStudio Cheat Sheets](https://www.rstudio.com/resources/cheatsheets/#ide)
+- [Syntax Highlighting in Blogdown](https://amber.rbind.io/blog/2017/11/15/syntax-highlighting/)
