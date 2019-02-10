@@ -47,23 +47,31 @@ family %>%
 ```
 
 ### Amanda & Owen
-Amanda and I started dating senior year of highschool.  We became best friends very quickly, and here we are many years later with our six month old baby, Owen!
-```{r echo = FALSE, message=FALSE}
-amanda <- tibble("Event" = c("Started dating", "Married", "Had a baby", "Today"),
-                 "Date" = c(2005, 2012, 2018, 2019),
-                 "Age" = c(17, 24, 30, 31))
-require("ggrepel")
+Amanda and I started dating senior year of highschool.  We quickly became best friends, and here we are many years later with our six month old baby, Owen!  Life has taken us from NY to NH to MA and now to VA.
+```{r echo = FALSE, message=FALSE, results="hide"}
+amanda <- tibble("Event" = c("Born",
+                             "Dating",
+                             "Married",
+                             "Owen"
+                             ),
+                 "Date" = c("1988-01-01",
+                            "2005-01-01", 
+                            "2012-01-01", 
+                            "2018-01-01"
+                            ))
+amanda$Date <- as.Date(amanda$Date)
+amanda
 
 ```
 
 
 ```{r}
-amanda %>% 
-  ggplot(aes(Date, Age)) +
-  geom_point() +
-  geom_label_repel(aes(label = Event)) +
-  scale_y_continuous(breaks = seq(10, 35, 5))
-  
+library(timelineS)
+timelineS(amanda, main = "",
+          labels = c("Born", "Met Amanda", "Married Amanda", "Owen Born"),
+          label.direction = "up", label.length = c(0.2,0.4,0.8,1.2), 
+          label.position = c(2, 2, 2, 2), label.cex = 1, line.color = "black", 
+          label.color = c("steelblue"), point.color = "steelblue", pch = "^")
 ```
 
 
