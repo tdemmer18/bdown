@@ -30,7 +30,7 @@ paginate = 20
 paginatePath = "page"
 
 # Enable Disqus integration
-disqusShortname = "tdemmer"
+disqusShortname = "https-www-tdemmer-com"
 
 
 [permalinks]
@@ -174,7 +174,6 @@ name = "Hosted on Github"
 identifier = "github"
 weight = 1
 url = "https://github.com/tdemmer18"
-
 
 
 
