@@ -111,7 +111,7 @@ showRightSidebar = true
 highlight = "default"
 
 # Google Analytics.
-googleAnalytics = ""
+googleAnalytics = "UA-134340024-1"
 
 # Sidebar social links.
 github = "@tdemmer18" # Your Github profile ID
