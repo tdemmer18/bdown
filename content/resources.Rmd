@@ -21,5 +21,6 @@ knitr::opts_chunk$set(echo = TRUE)
 
 
 ### Other
+- [BBC Style Guide](https://bbc.github.io/rcookbook/#how_to_create_bbc_style_graphics)
 - [RStudio Cheat Sheets](https://www.rstudio.com/resources/cheatsheets/#ide)
 - [Syntax Highlighting in Blogdown](https://amber.rbind.io/blog/2017/11/15/syntax-highlighting/)
