@@ -1,5 +1,6 @@
 ---
 title: "Using the NHL API"
+date: "2019-03-03"
 output: html_notebook
 ---
 
