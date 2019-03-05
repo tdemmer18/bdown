@@ -12,6 +12,10 @@
   </url>
   
   <url>
+    <loc>/</loc>
+  </url>
+  
+  <url>
     <loc>/resources/</loc>
   </url>
   
@@ -29,6 +33,10 @@
   <url>
     <loc>/topics/</loc>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/using-the-nhl-api/</loc>
   </url>
   
   <url>

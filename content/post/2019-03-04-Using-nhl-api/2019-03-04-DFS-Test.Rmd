@@ -1,0 +1,89 @@
+---
+title: "Using the NHL API"
+output: html_notebook
+---
+
+
+NHL Standings 
+---
+
+The past few weeks I have found myself exploring the NHL API.  Learning how to use their API and piece together to url's in order to return the information I want has been challenging and so rewarding when it works.  I have been using R and the 'jsonlite' package to make these requests.  Below I want to document, some of the requests I have made along with cleaning up some of the data.  The main purpose of this post and many of my future posts will be to document how I did something so that I have a place to go back and reference it.  I have found that the more and more coding resources I find, the more clutered my files get.  Learning how to properly organize these files is becoming increasingly more important as I look to reference them in the future.
+
+In addition to writing about the NHL API, I will be using Rmarkdown to write these reports.  My hope is that by doing so, overtime these resources will be come better and better.
+
+The frist thing I always do is load the packages I use.  As I write more and more code below, I will add additional packages to this code chunk. 
+
+```{r include=FALSE}
+library(flexdashboard)
+library(tidyverse)
+library(jsonlite)
+library(knitr)
+library(formattable)
+library(kableExtra)
+library(ghibli)
+library(ggforce)
+library(plotly)
+library(DT)
+library(readr)
+```
+
+```{r my_ggplot theme, include=FALSE}
+#### SET UP THEME
+my_font <- "Comfortaa Bold"
+my_background <- "#f5f5f4"
+my_color <- "#f5f5f2"
+my_theme <- theme(text = element_text(family = my_font, color = my_color),
+                  rect = element_rect(fill = my_background),
+                  plot.background = element_rect(fill = my_background, color = NA),
+                  panel.background = element_rect(fill = my_background, color = NA),
+                  panel.border = element_blank(),
+                  legend.background = element_rect(fill = my_background, color = NA),
+                  legend.key = element_rect(fill = my_background),
+                  plot.caption = element_text(size = 10))
+
+theme_set(theme_light() + my_theme)
+```
+
+```{r team_abbrev, include=FALSE}
+source("~/code/r/nhl_abbrev.R") # this file provides team abbrev. for joins
+```
+
+
+
+
+Below is the code I used to pull the national hockey league standings using the nhl api. These are the standings as of 2019-03-03.
+
+```{r}
+url <- "https://statsapi.web.nhl.com/api/v1/standings"
+standings <- fromJSON(url, flatten = TRUE)
+
+divisions <- 1:4
+standings_df <- data.frame()
+for (i in 1:length(divisions)) {
+  all_standings <- standings$records$teamRecords[[i]]
+  standings_df <- rbind(standings_df, all_standings)
+}
+  
+#View(standings_df)
+
+standings_table <- standings_df %>%
+  arrange(desc(points)) %>% 
+  mutate(GD = goalsScored - goalsAgainst) %>% 
+  select(Team = team.name, 
+         GP = gamesPlayed,
+         W = leagueRecord.wins, 
+         L = leagueRecord.losses, 
+         OTL = leagueRecord.ot, 
+         PTS = points, 
+         ROW = row,
+         GF = goalsScored,
+         GA = goalsAgainst,
+         GD,
+         STREAK = streak.streakCode)
+
+standings_table %>% 
+  kable(align = c("l", "c", "c", "c", "c", "c", "c", "c", "c", "c", "c")) %>% 
+  kable_styling(bootstrap_options = c("striped", "hover", "bordered"), full_width = T, position = "center", font_size = 12) %>% 
+  column_spec(c(1,6), bold = T) %>% 
+  row_spec(0, bold = T, color = "white", background = "#213456")
+```

@@ -23,5 +23,23 @@
       <description>The National Football League (NFL) just completed it’s 53 season and only three Quarterbacks have thrown for more than 50 touchdown passes during the course of one season. Both Peyton Manning and Tom Brady are considered to be two of the greatest QB’s of all time, the third, Patrict Mahomes was in just his second season, his first as a starter for the Kansas City Chiefs. Follow along below as I use the programming lanugage R to graph and annimate the touchdowns thrown as they accumulate over the season.</description>
     </item>
     
+    <item>
+      <title></title>
+      <link>/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>tdemmer18@gmail.com (Thomas J. Demmer)</author>
+      <guid>/</guid>
+      <description>Using the NHL API          code{white-space: pre;} pre:not([class]) { background-color: white; }  if (window.hljs) { hljs.configure({languages: []}); hljs.initHighlightingOnLoad(); if (document.readyState &amp;&amp; document.readyState === &#34;complete&#34;) { window.setTimeout(function() { hljs.initHighlighting(); }, 0); } }  h1 { font-size: 34px; } h1.title { font-size: 38px; } h2 { font-size: 30px; } h3 { font-size: 24px; } h4 { font-size: 18px; } h5 { font-size: 16px; } h6 { font-size: 12px; } .</description>
+    </item>
+    
+    <item>
+      <title>Using the NHL API</title>
+      <link>/using-the-nhl-api/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>tdemmer18@gmail.com (Thomas J. Demmer)</author>
+      <guid>/using-the-nhl-api/</guid>
+      <description>NHL Standings The past few weeks I have found myself exploring the NHL API. Learning how to use their API and piece together to url’s in order to return the information I want has been challenging and so rewarding when it works. I have been using R and the ‘jsonlite’ package to make these requests. Below I want to document, some of the requests I have made along with cleaning up some of the data.</description>
+    </item>
+    
   </channel>
 </rss>
