@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/using-the-nhl-api/</loc>
+    <lastmod>2019-03-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/nfl-qb-50-club/</loc>
     <lastmod>2019-02-09T00:00:00+00:00</lastmod>
   </url>
@@ -12,12 +17,16 @@
   </url>
   
   <url>
+    <loc>/</loc>
+  </url>
+  
+  <url>
     <loc>/resources/</loc>
   </url>
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2019-02-09T00:00:00+00:00</lastmod>
+    <lastmod>2019-03-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -32,12 +41,8 @@
   </url>
   
   <url>
-    <loc>/using-the-nhl-api/</loc>
-  </url>
-  
-  <url>
     <loc>/</loc>
-    <lastmod>2019-02-09T00:00:00+00:00</lastmod>
+    <lastmod>2019-03-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
